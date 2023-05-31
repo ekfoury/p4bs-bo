@@ -14,8 +14,8 @@ bo = BO(length_scale = 0.03525, alpha = 0.000125, strategy = max_EI, kernel=RBF)
 peak_detector = real_time_peak_detection(np.zeros(lag_change), lag_change, thresh_change, influence_change, num_csv=0)
 # *****************************************************
 
-os.system('rm /home/adaptive_buffer_tuning/regrets.csv 2> /dev/null')
-os.system('rm /home/adaptive_buffer_tuning/max_vals.csv 2> /dev/null')
+os.system('rm /home/p4bs/regrets.csv 2> /dev/null')
+os.system('rm /home/p4bs/max_vals.csv 2> /dev/null')
 
 os.system("influx delete --bucket p4bs   --start '1970-01-01T00:00:00Z' --stop $(date +\"%Y-%m-%dT%H:%M:%SZ\")")
 
@@ -118,8 +118,8 @@ while (True):
                         pass
                     #print('regret: ', regret)
                     
-                    #os.system('echo '+ str(regret) +' >> /home/adaptive_buffer_tuning/regrets.csv')
-                    #os.system('echo '+ str(max_value_so_far) +' >> /home/adaptive_buffer_tuning/max_vals.csv')
+                    #os.system('echo '+ str(regret) +' >> /home/p4bs/regrets.csv')
+                    #os.system('echo '+ str(max_value_so_far) +' >> /home/p4bs/max_vals.csv')
 
                     #regrets.append(regret)
                     #bo.plot_regret(regrets)
@@ -144,7 +144,7 @@ while (True):
                 optimal_buffer = int(bo.rescale_value(bo.optimizer.get_max()[0][0]))
                 print('Stopped, optimal buffer: ' + str(optimal_buffer))
                 buffer_modifier.change_buffer(optimal_buffer)
-                os.system('echo '+ str(optimal_buffer) +' >> /home/adaptive_buffer_tuning/configured_buffers')
+                os.system('echo '+ str(optimal_buffer) +' >> /home/p4bs/configured_buffers')
 
                 time.sleep(1)
 
