@@ -65,41 +65,41 @@ class Measurements():
                 .tag("tagname1", "tagvalue1")
                 .field("rtt", float(self.stat_SRTT))
               )
-            self.write_api.write(bucket=self.bucket, org="cilab", record=point_rtt)
+            self.write_api.write(bucket=self.bucket, org="INSERT_HERE", record=point_rtt)
             point_queue = (
                 Point("queues")
                 .tag("tagname1", "tagvalue1")
                 .field("queue", float(self.stat_Q))
               )
-            self.write_api.write(bucket=self.bucket, org="cilab", record=point_queue)
+            self.write_api.write(bucket=self.bucket, org="INSERT_HERE", record=point_queue)
             
             point_loss = (
                 Point("losses")
                 .tag("tagname1", "tagvalue1")
                 .field("loss", float(self.stat_LOSS))
               )
-            self.write_api.write(bucket=self.bucket, org="cilab", record=point_loss)
+            self.write_api.write(bucket=self.bucket, org="INSERT_HERE", record=point_loss)
             
             point_link = (
                 Point("links")
                 .tag("tagname1", "tagvalue1")
                 .field("link", float(self.stat_link))
               )
-            self.write_api.write(bucket=self.bucket, org="cilab", record=point_link)
+            self.write_api.write(bucket=self.bucket, org="INSERT_HERE", record=point_link)
     
             point_obj = (
                 Point("objs")
                 .tag("tagname1", "tagvalue1")
                 .field("obj", float(self.stat_F))
               )
-            self.write_api.write(bucket=self.bucket, org="cilab", record=point_obj)
+            self.write_api.write(bucket=self.bucket, org="INSERT_HERE", record=point_obj)
 
             point_N = (
                 Point("Ns")
                 .tag("tagname1", "tagvalue1")
                 .field("N", float(self.N))
               )
-            self.write_api.write(bucket=self.bucket, org="cilab", record=point_N)
+            self.write_api.write(bucket=self.bucket, org="INSERT_HERE", record=point_N)
             
     def evaluate_objective_function(self, direction):
         obj_function_value=0        
