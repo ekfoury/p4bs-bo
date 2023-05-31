@@ -20,9 +20,9 @@ class Measurements():
         self.stat_link = 0
         
         ## Grafana Plotting below
-        token = "1bxmgQrw9B5WIEtiGciEvBW1ou_X0tfUwv3l8Rp9EiwoLbaIju2bCup2HyEIrVee3WbiC-q6QY7APGImIridng=="
-        org = "cilab"
-        url = "http://10.173.85.43:8086"
+        token = "INSERT_HERE"
+        org = "INSERT_HERE"
+        url = "INSERT_HERE"
         client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
         self.bucket="p4bs"
         self.write_api = client.write_api(write_options=SYNCHRONOUS)
