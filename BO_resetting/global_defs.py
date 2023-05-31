@@ -10,9 +10,9 @@ import math
 # Global Variables/Constants
 # *****************************************************
 #### Juniper 
-junos_hostname = '10.173.1.211'
-junos_username = 'gomezgaj'
-junos_password = '2$4FExj9yhmh$2PX5%2vee'
+junos_hostname = 'INSERT_HERE'
+junos_username = 'INSERT_HERE'
+junos_password = 'INSERT_HERE'
 
 #### Peak detection
 lag_change = 50
